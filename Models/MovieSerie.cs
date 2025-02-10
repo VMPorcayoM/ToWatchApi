@@ -5,7 +5,7 @@ public class MovieSerie
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
-    public ObjectId Id { get; set; } // Mark as nullable
+    public string Id { get; set; } // Mark as nullable
     [BsonElement("title")]
     public required string Title { get; set; } // Mark as nullable
     [BsonElement("date")]

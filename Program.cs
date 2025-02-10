@@ -17,7 +17,11 @@ builder.Services.AddScoped<IMongoDatabase>(sp =>
 builder.Services.AddScoped<IMongoCollection<MovieSerie>>(sp =>
     sp.GetRequiredService<IMongoDatabase>().GetCollection<MovieSerie>("movies_series"));
 builder.Services.AddScoped<IMongoCollection<Genre>>(sp =>
-    sp.GetRequiredService<IMongoDatabase>().GetCollection<Genre>("genres"));    
+    sp.GetRequiredService<IMongoDatabase>().GetCollection<Genre>("genres"));
+builder.Services.AddScoped<IMongoCollection<Platform>>(sp =>
+    sp.GetRequiredService<IMongoDatabase>().GetCollection<Platform>("platforms"));
+builder.Services.AddScoped<IMongoCollection<Status>>(sp =>
+    sp.GetRequiredService<IMongoDatabase>().GetCollection<Status>("status"));
 builder.Services.AddControllers();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
